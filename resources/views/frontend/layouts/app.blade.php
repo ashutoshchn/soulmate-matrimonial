@@ -114,6 +114,344 @@ $lang = \App\Models\Language::where('code', $locale)->first();
         .fill-primary-grad stop:nth-child(2) {
             stop-color: {{ hex2rgba(get_setting('base_color', '#FD2C79'), 1) }};
         }
+
+         /* Header */
+
+
+         #name1{
+            margin-left: 5px;
+        }
+
+        #log{
+            margin-top: -46px;
+        }
+        /* according */
+
+        #f23{
+            color: black;
+			font-size: 2rem;
+        }
+
+        #a1,#a3,#a4,#a5,#a6,#a7,#a8{
+            color: black;
+			font-size: 1rem;
+        }
+		
+		#sba1,#sba3,#sba4,#sba5,#sba6,#sba7,#sba8{
+			font-size: 1rem;
+		}
+
+        #ab3{
+                    background-color: white;
+            height: 78px;
+            border: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+            margin-top: 1px;
+            padding-top: 25px;
+            margin-top: 7px;
+                }
+        
+
+                /* photo section */
+
+
+        .lf-txt{  font-size: 15px;
+            color: #fff;
+            z-index: 9;
+            margin-top: -80px;
+            text-align: center;
+            letter-spacing: 0.8px;
+        }
+
+        #pss{
+                    margin-top: 0px;
+                margin-bottom: -900px;
+                }
+
+
+        #news1{
+            margin-left: 480px;
+            width: 457px;
+            margin-left: 90px;
+
+        }
+
+        .paddt10 {
+            padding-top: 10px;
+        }
+
+
+
+        .bmt{
+            font-size: 20px; font-weight: 700;display:inline;
+        }
+
+
+        #imgc{
+            width: 400px;padding-top: 50px
+        }
+
+        .img-fluid {
+            margin-top: 91px;
+            border-radius: 15px;
+        }
+
+
+        #pcol{
+            margin-top: 85px;
+        }
+
+
+        #head{
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+        }
+
+        #pictx{
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: .96px;
+            padding-top: 10px;
+        }
+
+        #list{
+            line-height: 34px;
+            margin-left: -15px;
+            font-size: 16px;
+            letter-spacing: .6px;
+
+        }
+
+        .regfreebtn {
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            background: #bb0a24;
+            color: #fff;
+            cursor: pointer;
+            padding: 6px 3px 8px 2px;
+            border: none!important;
+            display: inline-block;
+            font-family: Lato;
+            outline: medium none;
+            text-decoration: none;
+            font-size: 12px;
+            border-radius: 10px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        #hc1{
+            padding-right: 61px;
+
+        }
+
+
+        #hc2{
+            
+            padding-right: 43px;
+            padding-left: -18px;
+
+        }
+
+        #hc3{
+            
+            padding-left: 8px;
+            padding-right: 50px;
+
+        }
+
+
+        #pltx{
+            
+            margin-bottom: -148px;
+
+        }
+
+        #py {
+            margin-top: -105px;
+            margin-bottom: -63px;
+        }
+
+
+
+
+
+/* media query 1 */
+
+@media (max-width:1400px) {
+
+	#pss {
+    margin-top: 0px;
+    margin-bottom: -847px;
+
+	}
+
+	#news1 {
+    margin-left: 480px;
+    width: 457px;
+    margin-left: 138px;
+}
+
+	
+}
+ 
+ 
+@media (max-width:1200px) {
+
+	#pss{
+		margin-top: 0px;
+    margin-bottom: -708px;
+	}
+
+	
+} 
+
+
+
+
+/* md 5 */
+
+@media (max-width:993px) {
+
+
+	#pss {
+    margin-top: 0px;
+    margin-bottom: -516px;
+	}
+	
+}
+
+
+
+/* mq  */
+
+@media (max-width:768px) {
+
+            #pss {
+            margin-top: 0px;
+            margin-bottom: -387px;
+        }
+
+        #news1 {
+            margin-left: 480px;
+            width: 337px;
+            margin-left: 94px;
+        }
+
+        #nm{
+            margin-top: -71px;
+        }
+
+
+        #l2 {
+            width: 295px;
+        }
+
+
+
+
+}
+
+
+
+
+@media (max-width:498px) {
+	#reversecol{
+		display: flex ;
+		flex-direction: column-reverse;
+	}
+			
+}
+
+
+
+
+/* mq */
+
+@media (max-width:436px) {
+				#news1 {
+				width: 255px;
+				margin-left: 74px;
+			}
+
+
+
+			#pstx{
+				
+				width: 112%;
+				font-size: 12px !important;
+			}
+
+
+			#pss {
+				margin-top: 0px;
+				margin-bottom: -315px;
+			}
+
+    
+
+}
+
+
+
+
+
+
+
+
+/* mq */
+
+@media (max-width:380px) {
+
+				#pss {
+				margin-top: 0px;
+				margin-bottom: -264px;
+			}
+
+			#ss{
+				margin-top: -37px;
+			}
+
+			#nm{
+				margin-top: -82px;
+			}
+
+			#news1 {
+				width: 255px;
+				margin-left: 40px;
+			}
+
+
+
+	
+	}
+
+        /* margin in footer */
+
+        @media (max-width:575px) {
+            .mb-4 {
+            margin-left: -7px;
+        }
+
+            #con{
+                padding-left: 19px;
+
+            }
+
+            #sa{
+                
+            margin-left: 31px;
+
+            }
+
+            #ad,#wb,#em,#ph{
+            margin-left: 9px;
+        }
+
+
+    }
     </style>
 
     @if (get_setting('google_analytics_activation') == 1)

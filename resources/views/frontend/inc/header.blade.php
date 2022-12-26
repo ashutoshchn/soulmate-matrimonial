@@ -153,7 +153,7 @@
                         	
                             @else
                                 <li class="list-inline-item ml-4">
-                            <a class="" href="{{ route('login') }}">{{ translate('Log In') }}</a>
+                            <a class="btn btn-sm bg-primary-grad text-white fw-600 py-1 border" href="{{ route('login') }}">{{ translate('Log In') }}</a>
                         </li>
                         <li class="list-inline-item ml-3">
                             <a class="btn btn-sm bg-primary-grad text-white fw-600 py-1 border"
@@ -179,6 +179,8 @@
                             @else
                             <img src="{{ static_asset('assets/img/logo.png') }}" alt="{{ env('APP_NAME') }}"
                                 class="mw-100 h-30px h-md-80px" height="80">
+                            <img src="{{ url('public/img/smlogonew.png') }}" alt="{{ env('APP_NAME') }}"
+                                class="mw-100 h-30px h-md-80px" height="100">
                             @endif
                         </a>
                     </div>					
@@ -190,6 +192,7 @@
                                 <span class="text-primary-grad mb-n1">{{ translate('Home') }}</span>
                             </a>
                         </li>
+                        @if(Auth::user())
                         <li
                             class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['member.listing'],'') }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
@@ -197,6 +200,7 @@
                                 <span class="text-primary-grad mb-n1">{{ translate('Active Members') }}</span>
                             </a>
                         </li>
+                        @endif
                         <li class="d-inline-block d-lg-flex pb-1 {{ areActiveRoutes(['packages'],'') }}">
                             <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
                                 href="{{ route('packages') }}">
@@ -210,6 +214,13 @@
                                 <span class="text-primary-grad mb-n1">{{ translate('Happy Stories') }}</span>
                             </a>
                         </li>
+                        <li
+                            class="d-inline-block d-lg-flex pb-1 {{url('faq') }}">
+                            <a class="nav-link text-uppercase fw-700 fs-15 d-flex align-items-center py-2"
+                                href="{{ url('faq') }}">
+                                <span class="text-primary-grad mb-n1">{{ translate('How to Register?') }}</span>
+                            </a>
+                        </li>
                     </ul>										
                     <!--menu for mobile start-->
                     <button class="hamburger">&#9776;</button>
@@ -219,14 +230,19 @@
                         <li class="{{ areActiveRoutes(['home'],'') }}">
                         <a href="{{ route('home') }}">{{ translate('Home') }}</a>
                         </li>
+                        @if(Auth::user())
                         <li class="{{ areActiveRoutes(['member.listing'],'') }}">
                         <a href="{{ route('member.listing') }}">{{ translate('Active Members') }}</a>
                         </li>
+                        @endif
                         <li class="{{ areActiveRoutes(['packages'],'') }}">
                         <a href="{{ route('packages') }}">{{ translate('Premium Plans') }}</a>
                         </li>
                         <li class="{{ areActiveRoutes(['happy_stories'],'') }}">
                         <a href="{{ route('happy_stories') }}">{{ translate('Happy Stories') }}</a>
+                        </li>
+                        <li class="{{ url('faq') }}">
+                        <a href="{{ url('faq') }}">{{ translate('How to Register?') }}</a>
                         </li>
                         @if (Auth::check() && auth()->user()->user_type == 'member')
                         <li class="{{ areActiveRoutes(['dashboard'],'') }}">

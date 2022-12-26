@@ -15,6 +15,7 @@ class VerifyCsrfToken extends Middleware
         //
         'aiz-uploader/upload',
         '/aiz-uploader',
-        '/stripe*'
+        '/stripe*',
+        '/states/get_state_by_country'
     ];
 }

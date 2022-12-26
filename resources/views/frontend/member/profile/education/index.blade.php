@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h5 class="mb-0 h6">{{translate('Education Info')}}</h5>
+        <h5 class="mb-0 h6">{{translate('Education Info')}}*</h5>
         <div class="text-right">
             <a onclick="education_add_modal('{{$member->id}}');"  href="javascript:void(0);" class="btn btn-sm btn-primary ">
               <i class="las mr-1 la-plus"></i>

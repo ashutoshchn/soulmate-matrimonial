@@ -166,6 +166,12 @@
                     </a>
                 </li>
                 <li class="aiz-side-nav-item">
+                    <a href="{{ route('member.basic-profile') }}" class="aiz-side-nav-link">
+                        <i class="las la-user aiz-side-nav-icon"></i>
+                        <span class="aiz-side-nav-text">{{ translate('Manage Profile New') }}</span>
+                    </a>
+                </li>
+                <li class="aiz-side-nav-item">
                     <a href="javascript:void(0);" class="aiz-side-nav-link" onclick="account_deactivation()">
                         @if(Auth::user()->deactivated == 0 )
                             <i class="las la-lock aiz-side-nav-icon"></i>

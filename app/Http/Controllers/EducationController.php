@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Education;
 use Validator;
 use Redirect;
+use Auth;
 use App\Utility\AdminNotificationUtility;
 
 class EducationController extends Controller
@@ -78,11 +79,13 @@ class EducationController extends Controller
 
         if($education->save()){
             flash(translate('Education Info has been added successfully'))->success();
-            return redirect()->to(url()->previous() . '#edu');
+            return back()->with(['nextStep' => '6']);
+            // return redirect()->to(url()->previous() . '#edu');
         }
         else {
             flash(translate('Sorry! Something went wrong with Education Info.'))->error();
-            return redirect()->to(url()->previous() . '#edu');
+            // return redirect()->to(url()->previous() . '#edu');
+            return back()->with(['nextStep' => '6']);
         }
     }
     /**
@@ -125,6 +128,11 @@ class EducationController extends Controller
      */
     public function done_new(Request $request)
     {
+        $eduExists = Education::where('user_id', Auth::user()->id)->exists();
+        if(!$eduExists) {
+            flash(translate('Education information is mandatory'))->error();
+            return back()->with(['nextStep' => '6']);
+        }
        return back()->with(['nextStep' => '7']);
     }
     /**

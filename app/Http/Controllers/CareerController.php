@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Career;
 use Validator;
 use Redirect;
+use Auth;
 use App\Utility\AdminNotificationUtility;
 
 class CareerController extends Controller
@@ -71,11 +72,15 @@ class CareerController extends Controller
 
          if($career->save()){
              flash(translate('Career Info has been added successfully'))->success();
-             return redirect()->to(url()->previous() . '#career');
+            //  return redirect()->to(url()->previous() . '#career');
+            return back()->with(['nextStep' => '7']);
+
          }
          else {
              flash(translate('Sorry! Something went wrong career Info.'))->error();
-             return redirect()->to(url()->previous() . '#career');
+            //  return redirect()->to(url()->previous() . '#career');
+            return back()->with(['nextStep' => '7']);
+
          }
      }
 /**
@@ -113,6 +118,11 @@ class CareerController extends Controller
 
      public function done_new(Request $request)
     {
+        $careerExists = Career::where('user_id', Auth::user()->id)->exists();
+        if(!$careerExists) {
+            flash(translate('Career information is mandatory'))->error();
+            return back()->with(['nextStep' => '7']);
+        }
        return back()->with(['nextStep' => '8']);
     }
 

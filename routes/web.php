@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('test-homepage','HomeController@test_homepage');
+
 
 //demo
 Route::get('/demo/cron_1', 'DemoController@cron_1');
@@ -54,7 +56,7 @@ Route::post('/currency', 'CurrencyController@changeCurrency')->name('currency.ch
 
 
 Route::get('/packages', 'PackageController@select_package')->name('packages');
-Route::get('/happy-stories','HomeController@happy_stories')->name('happy_stories');
+Route::get('/happy-stories','HomeController@haprefpy_stories')->name('happy_stories');
 Route::get('/story_details/{id}','HomeController@story_details')->name('story_details');
 
 Route::group(['middleware' => ['member','verified']], function(){
@@ -131,6 +133,19 @@ Route::group(['middleware' => ['member','verified']], function(){
 });
 
 Route::group(['middleware' => ['auth']], function () {
+
+
+    /**
+     * new profile update
+     */
+
+    Route::get('profile-settings/basic', 'MemberController@basic_profile')->name('member.basic-profile');
+    Route::post('profile-settings/basic/post', 'MemberController@basicupdate')->name('member.basicupdate');
+    Route::get('profile-settings/address', 'MemberController@addressForm')->name('member.address');
+    
+
+
+
     // member info edit
     Route::post('/members/introduction_update/{id}', 'MemberController@introduction_update')->name('member.introduction.update');
     Route::post('/members/send_admin_approval/{id}', 'MemberController@send_admin_approval')->name('member.send_admin_approval');
